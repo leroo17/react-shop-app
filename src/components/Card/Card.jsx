@@ -1,10 +1,10 @@
 import './Card.css'
 import { Link } from 'react-router'
-export const Card = ({title, price, address, date, image}) => {
+export const Card = ({id, title, price, address, date, image}) => {
 
     return (
         <>
-            <Link to={'product'} className="content-main__list-item">
+            <Link to={`/product/${id}`} className="content-main__list-item">
                 <div className="content-main__list-item--img">
                     <img src={image} />
                 </div>
