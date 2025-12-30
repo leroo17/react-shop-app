@@ -34,7 +34,7 @@ export const Home = () => {
                                                 addres={card.address}
                                                 date={card.date}
                                                 image = {card.image}
-                                            
+                                                description = {card.description}
                                             />
                                         ))
                                     }

@@ -1,6 +1,6 @@
 import './Card.css'
 import { Link } from 'react-router'
-export const Card = ({id, title, price, address, date, image}) => {
+export const Card = ({id, title, price, address, date, image, description}) => {
 
     return (
         <>

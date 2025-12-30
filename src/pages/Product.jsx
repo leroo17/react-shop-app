@@ -1,6 +1,10 @@
+import { useParams } from "react-router-dom"
 import { Header } from "../components/Header/Header"
+import { cardArray } from "../constants"
 
 export const Product = () => {
+    const { id } = useParams()
+    const findProduct = cardArray.find((p) => p.id == +id)
     return (
         <>
             <Header />
@@ -21,21 +25,13 @@ export const Product = () => {
                         <div className="content-box">
                             <div className="content-product">
                                 <div className="content-product__left">
-                                    <h2 className="content-product__title">Электросамокат kugoo Gx</h2>
+                                    <h2 className="content-product__title">{findProduct.title}</h2>
                                     <img src="/image/product.png" alt="product" className="content-product__img"/>
-                                    <p className="content-product__text">
-                                        Продаю не спеша самокат в хорошем состоянии. <br/>
-                                        Торг возможен. <br/>
-                                        За период эксплуатации не выявлено ни одной проблемы. <br/>
-                                        Из минусов — нужно прокачать задний тормоз. <br/>
-                                        Установлен отсекатель сзади. <br/>
-                                        Покрышки CST внедорожные. <br/>
-                                        Все на подшипниках, болты протянуты. <br/>
-                                        Пробег 881км , это немного для такого зверя. <br/>
+                                    <p className="content-product__text">{findProduct.description}
                                     </p>
                                 </div>
                                 <div className="content-product__right">
-                                    <h2 className="content-product__price">75 000 ₽</h2>
+                                    <h2 className="content-product__price">{findProduct.price}</h2>
                                 <button className="btn btn-primary btn-large">Показать телефон</button>
 
                                 </div>
